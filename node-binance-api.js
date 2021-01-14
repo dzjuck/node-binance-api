@@ -5151,7 +5151,7 @@ let api = function Binance( options = {} ) {
              * @param {function} list_status_callback - status callback
              * @return {undefined}
              */
-            userData: function userData( callback, execution_callback = false, subscribed_callback = false, list_status_callback = false ) {
+            userData: function userData( callback, execution_callback = false, subscribed_callback = false, list_status_callback = false, opened_callback = false ) {
                 let reconnect = () => {
                     if ( Binance.options.reconnect ) userData( callback, execution_callback, subscribed_callback );
                 };
@@ -5170,7 +5170,7 @@ let api = function Binance( options = {} ) {
                     Binance.options.balance_callback = callback;
                     Binance.options.execution_callback = execution_callback;
                     Binance.options.list_status_callback = list_status_callback;
-                    const subscription = subscribe( Binance.options.listenKey, userDataHandler, reconnect );
+                    const subscription = subscribe( Binance.options.listenKey, userDataHandler, reconnect, opened_callback );
                     if ( subscribed_callback ) subscribed_callback( subscription.endpoint );
                 }, 'POST' );
             },
