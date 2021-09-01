@@ -35,8 +35,8 @@ let api = function Binance( options = {} ) {
     let dstreamSingle = 'wss://dstream.binance.com/ws/';
     let dstreamSingleTest = 'wss://dstream.binancefuture.com/ws/';
     let dstreamTest = 'wss://dstream.binancefuture.com/stream?streams=';
-    let stream = 'wss://stream.binance.com:9443/ws/';
-    let combineStream = 'wss://stream.binance.com:9443/stream?streams=';
+    let stream = 'wss://stream1.binance.com:9443/ws/';
+    let combineStream = 'wss://stream1.binance.com:9443/stream?streams=';
     const userAgent = 'Mozilla/4.0 (compatible; Node Binance API)';
     const contentType = 'application/x-www-form-urlencoded';
     Binance.subscriptions = {};
